@@ -1,0 +1,616 @@
+<!DOCTYPE html> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UTAU (VOCALOID) LIBRARY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+@font-face{
+
+    font-family:"Vocaloid";
+
+    src:url("vocaloid.ttf");
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:
+    linear-gradient(
+        180deg,
+        #0a0a0a,
+        #151515
+    );
+
+    color:white;
+
+    font-family:
+    "Noto Sans",
+    sans-serif;
+
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+.header{
+
+    background:
+    linear-gradient(
+        90deg,
+        #111,
+        #1c1c1c
+    );
+
+    border-bottom:
+    1px solid #2d2d2d;
+
+    padding:35px;
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
+}
+
+.logo{
+
+    font-family:"Vocaloid";
+
+    font-size:52px;
+
+    letter-spacing:4px;
+
+    color:white;
+
+    text-shadow:
+    0 0 18px rgba(255,255,255,0.12);
+}
+
+/* NAV */
+
+.nav{
+
+    margin-top:22px;
+
+    display:flex;
+    gap:14px;
+}
+
+.nav button{
+
+    border:none;
+
+    background:#ffffff10;
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:0.2s;
+}
+
+.nav button:hover{
+
+    background:white;
+    color:black;
+
+    transform:scale(1.05);
+}
+
+/* PAGE */
+
+.page{
+    display:none;
+    padding:45px;
+}
+
+.active{
+    display:block;
+}
+
+/* GRID */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+}
+
+/* CARD */
+
+.card{
+
+    background:
+    linear-gradient(
+        180deg,
+        #161616,
+        #101010
+    );
+
+    border:
+    1px solid #2f2f2f;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    transition:0.25s;
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,0.45);
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:#666;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,0.08);
+}
+
+.card img{
+
+    width:100%;
+    height:350px;
+
+    object-fit:cover;
+}
+
+/* INFO */
+
+.info{
+    padding:24px;
+}
+
+.info h2{
+
+    font-family:"Vocaloid";
+
+    font-size:30px;
+
+    margin-bottom:12px;
+}
+
+.tag{
+
+    display:inline-block;
+
+    padding:7px 15px;
+
+    border-radius:999px;
+
+    background:#ffffff10;
+
+    border:
+    1px solid #393939;
+
+    color:#d4d4d4;
+
+    font-size:13px;
+
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.install{
+
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    color:black;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.install:hover{
+
+    background:#d8d8d8;
+
+    transform:scale(1.03);
+}
+
+/* CREDITS */
+
+.creditBox{
+
+    background:
+    linear-gradient(
+        180deg,
+        #181818,
+        #101010
+    );
+
+    border:
+    1px solid #2e2e2e;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    max-width:950px;
+
+    margin:auto;
+
+    line-height:1.9;
+}
+
+.creditBox h2{
+
+    font-family:"Vocaloid";
+
+    font-size:42px;
+
+    margin-bottom:25px;
+}
+
+.creditHighlight{
+
+    background:#ffffff08;
+
+    border:
+    1px solid #333;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    margin-top:28px;
+}
+
+/* FOOTER */
+
+.footer{
+
+    text-align:center;
+
+    padding:35px;
+
+    color:#8a8a8a;
+
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        VOCALOID LIBRARY
+    </div>
+
+    <div class="nav">
+
+        <button onclick="showPage('home')">
+            Library
+        </button>
+
+        <button onclick="showPage('credits')">
+            Credits
+        </button>
+
+    </div>
+
+</div>
+
+<!-- HOME -->
+
+<div
+class="page active"
+id="home">
+
+<div class="grid">
+
+    <!-- KAITO -->
+
+    <div class="card">
+
+        <img src="v3.jfif">
+
+        <div class="info">
+
+            <h2>KAITO V3</h2>
+
+            <div class="tag">
+                VOCALOID
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('kaito_v3.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- MIKU -->
+
+    <div class="card">
+
+        <img src="v4x.jfif">
+
+        <div class="info">
+
+            <h2>Hatsune Miku V4X</h2>
+
+            <div class="tag">
+                VOCALOID
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('miku_v4x.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- MEIKO -->
+
+    <div class="card">
+
+        <img src="v33.jfif">
+
+        <div class="info">
+
+            <h2>MEIKO V3</h2>
+
+            <div class="tag">
+                VOCALOID
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('meiko_v3.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- LUKA -->
+
+    <div class="card">
+
+        <img src="v333.jfif">
+
+        <div class="info">
+
+            <h2>Megurine Luka V3</h2>
+
+            <div class="tag">
+                VOCALOID
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('luka_v3.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- VFLOWER -->
+
+    <div class="card">
+
+        <img src="vflower.jfif">
+
+        <div class="info">
+
+            <h2>v flower</h2>
+
+            <div class="tag">
+                VOCALOID
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('vflower.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- YIXI -->
+
+    <div class="card">
+
+        <img src="yixi.png">
+
+        <div class="info">
+
+            <h2>YIXI</h2>
+
+            <div class="tag">
+                SYNTHESIZER V
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('yixi.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ZUNDAMON -->
+
+    <div class="card">
+
+        <img src="zunda.jfif">
+
+        <div class="info">
+
+            <h2>Zundamon</h2>
+
+            <div class="tag">
+                VOICEBANK
+            </div>
+
+            <button
+            class="install"
+            onclick="downloadVB('zunda.zip')">
+
+                INSTALL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- CREDITS -->
+
+<div
+class="page"
+id="credits">
+
+<div class="creditBox">
+
+<h2>CREDITS</h2>
+
+<p>
+This project is a fan-made voicebank library and launcher interface created for archival and accessibility purposes.
+</p>
+
+<p>
+Hatsune Miku, KAITO, MEIKO and Megurine Luka are official characters and products owned by Crypton Future Media, INC.
+</p>
+
+<p>
+VOCALOID and the VOCALOID engine are technologies and trademarks developed by Yamaha Corporation.
+</p>
+
+<p>
+v flower belongs to Gynoid Co., Ltd.
+</p>
+
+<p>
+YIXI and Synthesizer V related technologies belong to Dreamtonics Co., Ltd. and their respective owners.
+</p>
+
+<p>
+Zundamon and related character content belong to their respective creators and rights holders.
+</p>
+
+<div class="creditHighlight">
+
+<p>
+This project is unofficial and is not affiliated with, endorsed by, or associated with Crypton Future Media, Yamaha Corporation, Dreamtonics, Gynoid, or any related companies.
+</p>
+
+<p>
+All trademarks, names, characters, illustrations, software, and voicebanks belong to their respective owners.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+VOCALOID LIBRARY
+</div>
+
+<script>
+
+function downloadVB(file){
+
+window.location.href =
+"voicebanks/" + file;
+
+}
+
+function showPage(page){
+
+document
+.querySelectorAll(".page")
+.forEach(p=>{
+
+    p.classList
+    .remove("active");
+});
+
+document
+.getElementById(page)
+.classList
+.add("active");
+}
+
+
+</script>
+
+
+</body>
+</html>
